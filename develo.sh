@@ -19,7 +19,7 @@ function cd {
 # or when activate env and so on :)
 source "${BASH_SOURCE%/*}/banners.sh"
 
-function develo_root_dir {
+function _develo_root_dir {
 
   local current_dir="."
 
@@ -72,7 +72,7 @@ function _develo_help {
 function _develo_run {
   local cmd=$1;
   local args=${@:2};
-  local file="$(develo_root_dir)/$DEVELO_DIR/$cmd"
+  local file="$(_develo_root_dir)/$DEVELO_DIR/$cmd"
 
   if [ -f $file ]; then
     bash $file;
