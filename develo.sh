@@ -9,6 +9,10 @@ DEVELO_DIR=".develo"
 function cd {
   builtin cd $@;
 
+  #RVM hooks pactch
+  [[ -n \"\${rvm_current_rvmrc:-""}\" && \"\$*\" == \".\" ]] && rvm_current_rvmrc=\"\" || true
+      __rvm_cd_functions_set
+
   if [ -d "$DEVELO_DIR" ]; then
     _develo_activate;
   fi
