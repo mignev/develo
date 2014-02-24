@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.1"
+DEVELO_VERSION="0.0.2"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -121,9 +121,9 @@ function _develo_activate {
       _develo_actions_activate_banner;
     fi
 
-    local cwd=$(basename "$PWD");
+    local project_name=$(basename "$PWD");
 
-    PS1="\n(Develo#$cwd)$PS1";
+    PS1="\n(Develo#$project_name)$PS1";
     _develo_run activate;
   fi
 
@@ -139,11 +139,11 @@ function _develo_activate {
 function _develo_decativate {
   echo "Deactivating Develo ..."
   echo "Not implemented yet..."
-  return 0;
+  return 1;
 }
 
 function _develo_update {
   echo "Updating Develo ..."
   echo "Not implemented yet..."
-  return 0;
+  return 1;
 }
