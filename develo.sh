@@ -5,34 +5,12 @@ DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
 
-#Predefine cd for autoload
-function cd {
-  builtin cd $@;
-
-  #RVM hooks pactch
-  [[ -n \"\${rvm_current_rvmrc:-""}\" && \"\$*\" == \".\" ]] && rvm_current_rvmrc=\"\" || true
-      __rvm_cd_functions_set
-
-  if [ -d "$DEVELO_DIR" ]; then
-    _develo_activate;
-  fi
-}
+source "${BASH_SOURCE%/*}/functions.sh"
 
 # Colorful banners :)
 # You will see them when you init new env
 # or when activate env and so on :)
 source "${BASH_SOURCE%/*}/banners.sh"
-
-function _develo_root_dir {
-
-  local current_dir="."
-
-  while [ ! -d "$current_dir/.develo" ]; do
-    current_dir="$current_dir/.."
-  done
-
-  (cd "$current_dir" && echo "$(pwd -P)")
-}
 
 function develo {
   local cmd=$1;
@@ -123,7 +101,12 @@ function _develo_activate {
 
     local project_name=$(basename "$PWD");
 
-    PS1="\n(Develo#$project_name)$PS1";
+    #TODO: Fix code repetition
+    if [[ "$PS1" =~ "^\n" ]]; then
+      PS1="\n(Develo#$project_name)\n$PS1";
+    else
+      PS1="\n(Develo#$project_name)$PS1";
+    fi
     _develo_run activate;
   fi
 
