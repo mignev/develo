@@ -17,9 +17,9 @@
 # Replace these lines of echo code with your meaningful implementation
 
 echo "Hello from:"
-echo "$(pwd)/.develo/$(basename $0)"
+echo "$(pwd)/.develo/${BASH_SOURCE##*/}"
 echo
-echo "Now your $(basename $0) script is blank and useless!"
+echo "Now your ${BASH_SOURCE##*/} script is blank and useless!"
 echo "Hurry up and place your logic there to do something meaningful!"
 echo
 echo "Bye :)"

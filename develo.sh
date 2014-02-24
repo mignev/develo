@@ -79,7 +79,7 @@ function _develo_run {
   local file="$(_develo_root_dir)/$DEVELO_DIR/$cmd"
 
   if [ -f $file ]; then
-    bash $file;
+    source $file;
     return 0;
   else
     _develo_action_not_exist_banner $cmd;
