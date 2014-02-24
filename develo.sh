@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.4"
+DEVELO_VERSION="0.0.5"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -131,7 +131,7 @@ function _develo_decativate {
 }
 
 function _develo_update {
-  local develo_version=$(curl -s https://raw.github.com/mignev/develo/master/develo.sh |grep 'DEVELO_VERSION='| awk -F\" '{print $(NF-1)}')
+  local develo_version=$(curl -s https://raw.github.com/mignev/develo/master/develo.sh |grep '^DEVELO_VERSION='| awk -F\" '{print $(NF-1)}')
   local my_develo_version=$DEVELO_VERSION;
   if [ "$develo_version" != "$my_develo_version" ]; then
 
