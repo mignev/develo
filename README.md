@@ -5,6 +5,8 @@ Hi, don't be so excited :) There's nothing magical here :) `Develo` is just a to
 
 What do I mean?
 
+### The problem
+
 Imagine that you are just like me ... love to experiment or work with different programming languages or with different frameworks.
 
 I saw that on every (web)project that I work with I have the same things to do:
@@ -26,8 +28,13 @@ For example let's have a look in `Deploying` process:
 
 Yeah ... many different ways to do it but the goal is the same!
 
-So I just decided to ***standardize*** these things :) **That's it!**
 
+### Solution
+I just decided to ***standardize*** these things :)
+
+    $ develo deploy
+
+on every project! **That's it!**
 
 
 #Usage examples
