@@ -104,3 +104,14 @@ function _develo_actions_server_banner {
   echo
   echo
 }
+
+function _develo_actions_selfupdate_banner {
+  echo
+  _develo_color_line;
+  echo
+  echo -en "#\x1B[32m   Updating Develo!   \x1B[0m#";
+  echo
+  _develo_color_line;
+  echo
+  echo
+}

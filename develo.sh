@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.2"
+DEVELO_VERSION="0.0.3"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -27,6 +27,11 @@ function develo {
 
   if [ "$cmd" == "activate" ]; then
     _develo_activate 1;
+    return 0;
+  fi
+
+  if [ "$cmd" == "selfupdate" ]; then
+    _develo_update;
     return 0;
   fi
 
@@ -126,7 +131,21 @@ function _develo_decativate {
 }
 
 function _develo_update {
-  echo "Updating Develo ..."
-  echo "Not implemented yet..."
-  return 1;
+  local develo_version=$(curl -s https://raw.github.com/mignev/develo/master/develo.sh |grep DEVELO_VERSION| awk -F\" '{print $(NF-1)}')
+  local my_develo_version=$DEVELO_VERSION;
+  if [ "$develo_version" != "$my_develo_version" ]; then
+
+    _develo_actions_selfupdate_banner;
+
+    git clone https://github.com/mignev/develo.git ~/develo
+    rm -rf ~/.develo_project
+    mv ~/develo ~/.develo_project
+    source ~/.develo_project/develo.sh
+  else
+    echo
+    echo "Your Develo is up-to-date.";
+  fi
+
+
+  return 0;
 }

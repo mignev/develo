@@ -111,7 +111,6 @@ So thank you very much that you are looking in this section :) I will be very ha
 Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your super duper awesome changes :) and send me a Pull Request. :)
 
 # TODO
-- update develo
 - deactivate env
 - Add some tests
 - Templates for different kind of projects.
@@ -119,6 +118,11 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
   - `develo initi --app https://github.com/mignev/develo-custom-actions.git`
 
 # CHANGELOG
+
+
+### 0.0.3:
+
+- Basic implementation of selfupdate function
 
 ### 0.0.2:
 
