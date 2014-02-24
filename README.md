@@ -5,6 +5,8 @@ Hi, don't be so excited :) There's nothing magical here :) `Develo` is just a to
 
 What do I mean?
 
+### The Problem
+
 Imagine that you are just like me ... love to experiment or work with different programming languages or with different frameworks.
 
 I saw that on every (web)project that I work with I have the same things to do:
@@ -26,8 +28,13 @@ For example let's have a look in `Deploying` process:
 
 Yeah ... many different ways to do it but the goal is the same!
 
-So I just decided to ***standardize*** these things :) **That's it!**
 
+### The Solution
+I just decided to ***standardize*** these things :)
+
+    $ develo deploy
+
+on every project! **That's it!**
 
 
 #Usage examples
@@ -36,7 +43,7 @@ Some quick examples how can you use `develo`
 
 ### Initialize new environment
 
-  $ develo init
+    $ develo init
 
 This command will create `.develo` directory in your project with some half empty action files.
 
@@ -54,17 +61,17 @@ If you have any ideas for other similar behaviours which we can make as a develo
 
 ### Using actions
 
-  $ develo <action>
+    $ develo <action>
 
 If you want to run the code of `.develo/deploy` for example you have to run:
 
-  $ develo deploy
+    $ develo deploy
 
 That's all!
 
 ### Help
 
-  $ develo help
+    $ develo help
 
 
 #Requirements
