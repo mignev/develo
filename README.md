@@ -74,14 +74,24 @@ That's all!
 
 # Installation
 
-    # git clone git@github.com:mignev/develo.git
-    # cd venv
-    # make install
+### With make
+
+    $ git clone https://github.com/mignev/develo.git
+    $ cd develo
+    $ make install
+
+### Manual
+
+    $ cd ~
+    $ git clone https://github.com/mignev/develo.git
+    $ mv develo ~/.develo_project
+    $ echo '\nsource ~/.develo_project/develo.sh' >> ~/.bashrc
+
 
 # Uninstallation
 
-    # cd develo
-    # make uninstall
+    $ cd develo
+    $ make uninstall
 
 # Testing
 
@@ -99,7 +109,7 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 - Add some tests
 - Templates for different kind of projects.
   - `develo initi --app rails` (jekyll, django ...)
-  - `develo initi --app git@github.com:mignev/develo-custom-actions.git`
+  - `develo initi --app https://github.com/mignev/develo-custom-actions.git`
 
 # CHANGELOG
 
