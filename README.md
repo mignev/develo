@@ -5,7 +5,7 @@ Hi, don't be so excited :) There's nothing magical here :) `Develo` is just a to
 
 What do I mean?
 
-### The problem
+### The Problem
 
 Imagine that you are just like me ... love to experiment or work with different programming languages or with different frameworks.
 
@@ -29,7 +29,7 @@ For example let's have a look in `Deploying` process:
 Yeah ... many different ways to do it but the goal is the same!
 
 
-### Solution
+### The Solution
 I just decided to ***standardize*** these things :)
 
     $ develo deploy
