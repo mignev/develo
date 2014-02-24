@@ -120,7 +120,7 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 # CHANGELOG
 
 
-### 0.0.3:
+### 0.0.5:
 
 - Basic implementation of selfupdate function
 
