@@ -79,6 +79,10 @@ function _develo_run {
   local file="$(_develo_root_dir)/$DEVELO_DIR/$cmd"
 
   if [ -f $file ]; then
+    # Auto loading banners before out of every command
+    # disabled for now
+    # local banner="_develo_actions_${cmd}_banner";
+    # ($banner)
     source $file;
     return 0;
   else
@@ -113,7 +117,8 @@ function _develo_activate {
     # Show this banner on activating every time
     # except when develo is activate manualy "develo activate"
     if [ -z "$manual_activation" ]; then
-      _develo_auto_activating_banner;
+      DEVELO_AUTO_ACTIVATE="auto"
+      _develo_actions_activate_banner;
     fi
 
     local cwd=$(basename "$PWD");
@@ -125,7 +130,8 @@ function _develo_activate {
   # This will show up when develo
   # is activated by command "develo activate"
   if [ ! -z "$manual_activation" ]; then
-    _develo_activating_banner;
+    DEVELO_AUTO_ACTIVATE="";
+    _develo_actions_activate_banner;
     _develo_run activate;
   fi
 }

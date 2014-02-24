@@ -46,24 +46,59 @@ function _develo_action_not_exist_banner {
   echo
 }
 
-function _develo_auto_activating_banner {
-  # Color fun :)
+
+function _develo_actions_activate_banner {
+
+  if [ ! -z "$DEVELO_AUTO_ACTIVATE" ]; then
+    # Color fun :)
+    echo
+    _develo_color_line;
+    echo
+    echo -e "#   \x1B[1mDevelo detected    \x1B[0m#";
+    echo -en "# \x1B[32m and it's activated! \x1B[0m#";
+    echo
+    _develo_color_line;
+    echo
+    echo
+  else
+    echo
+    _develo_color_line;
+    echo
+    echo -en "#\x1B[32m Develo is activated! \x1B[0m#";
+    echo
+    _develo_color_line;
+    echo
+    echo
+  fi
+}
+
+function _develo_actions_deploy_banner {
   echo
   _develo_color_line;
   echo
-  echo -e "#   \x1B[1mDevelo detected    \x1B[0m#";
-  echo -en "# \x1B[32m and it's activated! \x1B[0m#";
+  echo -en "#\x1B[32m  Deploying started!  \x1B[0m#";
   echo
   _develo_color_line;
   echo
   echo
 }
 
-function _develo_activating_banner {
+function _develo_actions_db_banner {
   echo
   _develo_color_line;
   echo
-  echo -en "#\x1B[32m Develo is activated! \x1B[0m#";
+  echo -en "#\x1B[32m   Connecting to DB!  \x1B[0m#";
+  echo
+  _develo_color_line;
+  echo
+  echo
+}
+
+function _develo_actions_server_banner {
+  echo
+  _develo_color_line;
+  echo
+  echo -en "#\x1B[32m     Start Server!    \x1B[0m#";
   echo
   _develo_color_line;
   echo
