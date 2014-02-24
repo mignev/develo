@@ -36,7 +36,7 @@ Some quick examples how can you use `develo`
 
 ### Initialize new environment
 
-  $ develo init
+    $ develo init
 
 This command will create `.develo` directory in your project with some half empty action files.
 
@@ -54,17 +54,17 @@ If you have any ideas for other similar behaviours which we can make as a develo
 
 ### Using actions
 
-  $ develo <action>
+    $ develo <action>
 
 If you want to run the code of `.develo/deploy` for example you have to run:
 
-  $ develo deploy
+    $ develo deploy
 
 That's all!
 
 ### Help
 
-  $ develo help
+    $ develo help
 
 
 #Requirements
