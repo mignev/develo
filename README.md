@@ -114,8 +114,8 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 - deactivate env
 - Add some tests
 - Templates for different kind of projects.
-  - `develo initi --app rails` (jekyll, django ...)
-  - `develo initi --app https://github.com/mignev/develo-custom-actions.git`
+  - `develo init --app rails` (jekyll, django ...)
+  - `develo init --app https://github.com/mignev/develo-custom-actions.git`
 
 # CHANGELOG
 
