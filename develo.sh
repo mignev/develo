@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.5"
+DEVELO_VERSION="0.0.6"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -53,6 +53,9 @@ function _develo_help {
     echo -e "\x1B[1mSome things that you have to know:\x1B[0m"
     echo ""
     echo "  Your scripts are here: $(pwd)/$DEVELO_DIR/"
+    echo "  activate      Activate develo environemnt"
+    echo "  selfupdate    Updates itself"
+    echo "  help          Shows you this help"
   fi
 }
 
