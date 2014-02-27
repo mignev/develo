@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.6"
+DEVELO_VERSION="0.0.7"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -35,6 +35,11 @@ function develo {
     return 0;
   fi
 
+  if [ "$cmd" == "version" ]; then
+    _develo_version;
+    return 0;
+  fi
+
   if [ ! -z "$cmd" ]; then
     _develo_run $@;
     return 0;
@@ -51,10 +56,12 @@ function _develo_help {
 
   if [ -d "$DEVELO_DIR" ]; then
     echo -e "\x1B[1mSome things that you have to know:\x1B[0m"
-    echo ""
+    echo
     echo "  Your scripts are here: $(pwd)/$DEVELO_DIR/"
+    echo
     echo "  activate      Activate develo environemnt"
     echo "  selfupdate    Updates itself"
+    echo "  version       Shows installed version"
     echo "  help          Shows you this help"
   fi
 }
@@ -131,6 +138,10 @@ function _develo_decativate {
   echo "Deactivating Develo ..."
   echo "Not implemented yet..."
   return 1;
+}
+
+function _develo_version {
+  _develo_version_banner;
 }
 
 function _develo_update {

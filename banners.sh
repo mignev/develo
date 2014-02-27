@@ -115,3 +115,15 @@ function _develo_actions_selfupdate_banner {
   echo
   echo
 }
+
+function _develo_version_banner {
+  local version=$1;
+  # Color fun :)
+  echo
+  _develo_color_line;
+  echo
+  echo -en "#     \x1B[32mDevelo ${DEVELO_VERSION}\x1B[0m     #";
+  echo
+  _develo_color_line;
+  echo
+}
