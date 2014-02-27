@@ -106,7 +106,7 @@ TODO
 
 # Contributing
 
-So thank you very much that you are looking in this section :) I will be very happy and thankful if you share some ideas, some hacks which will make our lives nicer and easier :)
+So thank you very much that you are looking in this section :) I will be very happy and thankful if you share some ideas, some hacks and best practices which will make our lives nicer and easier :)
 
 Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your super duper awesome changes :) and send me a Pull Request. :)
 
