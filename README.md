@@ -18,7 +18,7 @@ I saw that on every (web)project that I work with I have the same things to do:
 - **Deploying**
 - **Updating project**
 
-**Same things ... Different projects!**
+**Same shits ... Different projects!**
 
 For example let's have a look in `Deploying` process:
 
