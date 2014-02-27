@@ -34,7 +34,7 @@ I just decided to ***standardize*** these things :)
 
     $ develo deploy
 
-on every project! **That's it!**
+on every f**kin project! **That's it!** :)
 
 
 #Usage examples
