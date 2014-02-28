@@ -6,7 +6,7 @@ function _develo_root_dir {
     current_dir="$current_dir/.."
   done
 
-  (cd "$current_dir" && echo "$(pwd -P)")
+  (builtin cd "$current_dir" && echo "$(pwd -P)")
 }
 
 is_function() { [[ "$(declare -Ff "$1")" ]]; }
