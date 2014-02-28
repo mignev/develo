@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.7"
+DEVELO_VERSION="0.0.8"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -117,7 +117,7 @@ function _develo_activate {
     local project_name=$(basename "$PWD");
 
     #TODO: Fix code repetition
-    if [[ "$PS1" =~ "^\n" ]]; then
+    if [[ ! $PS1 =~ ^[\\n].+$ ]]; then
       PS1="\n(Develo#$project_name)\n$PS1";
     else
       PS1="\n(Develo#$project_name)$PS1";
