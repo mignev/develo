@@ -18,7 +18,7 @@ I saw that on every (web)project that I work with I have the same things to do:
 - **Deploying**
 - **Updating project**
 
-**Same things ... Different projects!**
+**Same shits ... Different projects!**
 
 For example let's have a look in `Deploying` process:
 
@@ -34,7 +34,7 @@ I just decided to ***standardize*** these things :)
 
     $ develo deploy
 
-on every project! **That's it!**
+on every f**kin project! **That's it!** :)
 
 
 #Usage examples
@@ -106,11 +106,15 @@ TODO
 
 # Contributing
 
-So thank you very much that you are looking in this section :) I will be very happy and thankful if you share some ideas, some hacks which will make our lives nicer and easier :)
+So thank you very much that you are looking in this section :) I will be very happy and thankful if you share some ideas, some hacks and best practices which will make our lives nicer and easier :)
 
 Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your super duper awesome changes :) and send me a Pull Request. :)
 
 # TODO
+- Add `setup` action. 
+
+    - This kind of action will be useful when for example invite new developer to the proejct and there will be the code for setuping environment (installing gems, installing npm packages, installing and configuring grunt installing bower dependencies, making dirs that are in .gitignore by default because they are need only in development and so on.)
+
 - deactivate env
 - Add some tests
 - Templates for different kind of projects.
