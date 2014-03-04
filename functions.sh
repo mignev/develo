@@ -13,7 +13,8 @@ is_function() { [[ "$(declare -Ff "$1")" ]]; }
 
 #Predefine cd for autoload
 function cd {
-  builtin cd $@;
+  local directory="$1"
+  builtin cd "$directory";
 
   #RVM hooks pactch
   [[ -n \"\${rvm_current_rvmrc:-""}\" && \"\$*\" == \".\" ]] && rvm_current_rvmrc=\"\" || true
