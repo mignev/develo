@@ -115,6 +115,11 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 
     - This kind of action will be useful when for example invite new developer to the proejct and there will be the code for setuping environment (installing gems, installing npm packages, installing and configuring grunt installing bower dependencies, making dirs that are in .gitignore by default because they are need only in development and so on.)
 
+- Add `info` action.
+
+    - This kind of action will be useful to add some project info. Wiki links or some info about some procedures of the project and so on.
+
+
 - deactivate env
 - Add some tests
 - Templates for different kind of projects.
