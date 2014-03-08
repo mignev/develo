@@ -123,6 +123,10 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 
     - This action will be useful to collect some logic in cases when we develop packages (gem,pip,phar and so on.)
 
+- Add `tests` action
+    
+    - This action will be useful to collect logic about the tests of the project.
+
 - deactivate env
 - Add some tests
 - Templates for different kind of projects.
