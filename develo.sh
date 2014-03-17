@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.10"
+DEVELO_VERSION="0.0.11"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -15,38 +15,46 @@ source "${BASH_SOURCE%/*}/banners.sh"
 function develo {
   local cmd=$1;
 
-  if [ "$cmd" == "init" ]; then
-    _develo_init;
-    return 0;
+  # Show help info if call develo
+  # without any arguments
+  if [ -z "$cmd" ]; then
+      _develo_help;
+      return 0;
   fi
 
-  if [ "$cmd" == "help" ]; then
-    _develo_help;
-    return 0;
-  fi
+  case "$cmd" in
+    help|-h|--help)
+      _develo_help;
+      return 0;
+    ;;
 
-  if [ "$cmd" == "activate" ]; then
-    _develo_activate 1;
-    return 0;
-  fi
+    init)
+      _develo_init;
+      return 0;
+    ;;
 
-  if [ "$cmd" == "selfupdate" ]; then
-    _develo_update;
-    return 0;
-  fi
+    activate)
+      _develo_activate 1;
+      return 0;
+    ;;
 
-  if [ "$cmd" == "version" ]; then
-    _develo_version;
-    return 0;
-  fi
+    selfupdate)
+      _develo_update;
+      return 0;
+    ;;
 
-  if [ ! -z "$cmd" ]; then
-    _develo_run $@;
-    return 0;
-  fi
+    version|-v|--version)
+      _develo_version;
+      return 0;
+    ;;
 
-  _develo_help;
-  return 0;
+    *)
+      _develo_run $@;
+      return 0;
+    ;;
+
+  esac
+
 }
 
 function _develo_help {
@@ -59,6 +67,7 @@ function _develo_help {
     echo
     echo "  Your scripts are here: $(pwd)/$DEVELO_DIR/"
     echo
+    echo "  init          Initialize new develo environemnt"
     echo "  activate      Activate develo environemnt"
     echo "  selfupdate    Updates itself"
     echo "  version       Shows installed version"
