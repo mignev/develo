@@ -158,3 +158,7 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 
 #Copyright
 Copyright (c) 2014 Marian Ignev. See LICENSE for further details.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mignev/develo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
