@@ -132,6 +132,10 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 - Templates for different kind of projects.
   - `develo init --app rails` (jekyll, django ...)
   - `develo init --app https://github.com/mignev/develo-custom-actions.git`
+  - `develo new myproject --from gh-user/gh-repo --args`
+
+- Add global and local config file
+    - This will be useful if there isn't any sense to run `develo activate` automaticaly every time when you change to directory with initialized develo within. Also will be useful to add some ENV_VAR into it which will be available in all actions and so on.
 
 # CHANGELOG
 
