@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.12"
+DEVELO_VERSION="0.0.13"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
@@ -110,6 +110,12 @@ function _develo_init {
   fi
 }
 
+function _develo_detected {
+  if [[ ! "$PS1" =~ "Develo" ]]; then
+    _develo_detected_banner;
+  fi
+}
+
 function _develo_activate {
 
   local manual_activation=$1;
@@ -131,7 +137,6 @@ function _develo_activate {
     else
       PS1="\n(Develo#$project_name)$PS1";
     fi
-    _develo_run activate;
   fi
 
   # This will show up when develo

@@ -1,3 +1,4 @@
+
 ##
 # http://misc.flogisoft.com/bash/tip_colors_and_formatting
 ##
@@ -70,6 +71,22 @@ function _develo_actions_activate_banner {
     echo
     echo
   fi
+}
+
+function _develo_detected_banner {
+    # Color fun :)
+    echo
+    _develo_color_line;
+    echo
+    echo -e "#   \x1B[1mDevelo detected    \x1B[0m#";
+    echo -e "#  \x1B[1m                    \x1B[0m#";
+    echo -e "#  \x1B[32m develo activate    \x1B[0m#";
+    echo -e "#  \x1B[1m                    \x1B[0m#";
+    echo -en "# \x1B[1m  to activate it!    \x1B[0m#";
+    echo
+    _develo_color_line;
+    echo
+    echo
 }
 
 function _develo_actions_deploy_banner {
