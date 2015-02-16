@@ -139,6 +139,11 @@ Fork the [develo repo on GitHub](https://github.com/mignev/develo), make your su
 
 # CHANGELOG
 
+### 0.0.14:
+
+#### Features
+- Add helpers ability
+
 ### 0.0.8:
 
 #### Features

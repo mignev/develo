@@ -1,11 +1,17 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.13"
+DEVELO_VERSION="0.0.14"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 #have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
 
 source "${BASH_SOURCE%/*}/functions.sh"
+
+# Loading helpers
+for helper in ${BASH_SOURCE%/*}/helpers/*
+do
+    source $helper
+done
 
 # Colorful banners :)
 # You will see them when you init new env
