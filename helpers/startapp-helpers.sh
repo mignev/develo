@@ -1,9 +1,11 @@
 function __develo_startapp_mongodb_helper {
   local APPNAME=$1
   local NAMESPACE=$2
-  local MONGODB_LOCAL_PORT=$3
 
-  local MONGO_CONNECTED=$(ps aux| grep "$APPNAME-.*27017"| grep -v grep)
+  local MONGODB_LOCAL_PORT=$3
+  local MONGODB_LOCAL_PORT=${MONGODB_LOCAL_PORT:=27017}
+
+  local MONGO_CONNECTED=$(ps aux| grep "$APPNAME-.*$MONGODB_LOCAL_PORT"| grep -v grep)
 
   if [ -z "$MONGO_CONNECTED" ]; then
     echo "Connecting to MongoDB on StartApp"
@@ -25,7 +27,7 @@ function __develo_startapp_mongodb_helper {
     export STARTAPP_MONGODB_URI=127.0.0.1:$MONGODB_LOCAL_PORT
 
     ssh $SSH_HOST -f -N -L $MONGODB_LOCAL_PORT:$_MONGO_REMOTE_HOST:$_MONGO_REMOTE_PORT
-    local MONGO_CONNECTED=$(ps aux| grep "$APPNAME-.*27017"| grep -v grep)
+    local MONGO_CONNECTED=$(ps aux| grep "$APPNAME-.*$MONGODB_LOCAL_PORT"| grep -v grep)
     if [ -n "$MONGO_CONNECTED" ]; then
       echo "MongoDB connected!"
     fi

@@ -139,7 +139,7 @@ function _develo_version_banner {
   echo
   _develo_color_line;
   echo
-  echo -en "#     \x1B[32mDevelo ${DEVELO_VERSION}\x1B[0m     #";
+  echo -en "#     \x1B[32mDevelo ${DEVELO_VERSION}\x1B[0m    #";
   echo
   _develo_color_line;
   echo
