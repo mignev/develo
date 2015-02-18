@@ -7,24 +7,19 @@ function __develo_startapp_mongodb_helper {
 
   local MONGO_CONNECTED=$(ps aux| grep "$APPNAME-.*$MONGODB_LOCAL_PORT"| grep -v grep)
 
-  if [ -z "$MONGO_CONNECTED" ]; then
-    echo "Connecting to MongoDB on StartApp"
-    local SSH_HOST=$(app show $APPNAME -n $NAMESPACE --gears ssh)
-    local MONGO_HOST=$(app ssh $APPNAME -n $NAMESPACE 'env|grep OPENSHIFT_MONGODB_DB_URL')
-    local MONGO_HOST=$(echo $MONGO_HOST| tr ' ' '\n'| grep OPENSHIFT_MONGODB_DB_URL=|sed 's/\///g'| sed 's/@/\:/g')
+  local MONGO_HOST=$(app ssh $APPNAME -n $NAMESPACE 'env|grep OPENSHIFT_MONGODB_DB_URL')
+  local MONGO_HOST=$(echo $MONGO_HOST| tr ' ' '\n'| grep OPENSHIFT_MONGODB_DB_URL=|sed 's/\///g'| sed 's/@/\:/g')
 
-    [[ "$MONGO_HOST" =~ ^OPENSHIFT_MONGODB_DB_URL=mongodb:(.*):(.*):(.*):(.*)$ ]] && \
+  [[ "$MONGO_HOST" =~ ^OPENSHIFT_MONGODB_DB_URL=mongodb:(.*):(.*):(.*):(.*)$ ]] && \
     local _MONGO_USER=${BASH_REMATCH[1]}
     local _MONGO_PASS=${BASH_REMATCH[2]}
     local _MONGO_REMOTE_HOST=${BASH_REMATCH[3]}
     local _MONGO_REMOTE_PORT=${BASH_REMATCH[4]}
 
-    export STARTAPP_MONGODB_DATABASE=$APPNAME
-    export STARTAPP_MONGODB_USER=$_MONGO_USER
-    export STARTAPP_MONGODB_PASS=$_MONGO_PASS
-    export STARTAPP_MONGODB_HOST=127.0.0.1
-    export STARTAPP_MONGODB_PORT=$MONGODB_LOCAL_PORT
-    export STARTAPP_MONGODB_URI=127.0.0.1:$MONGODB_LOCAL_PORT
+  if [ -z "$MONGO_CONNECTED" ]; then
+    echo "Connecting to MongoDB on StartApp"
+
+    local SSH_HOST=$(app show $APPNAME -n $NAMESPACE --gears ssh)
 
     ssh $SSH_HOST -f -N -L $MONGODB_LOCAL_PORT:$_MONGO_REMOTE_HOST:$_MONGO_REMOTE_PORT
     local MONGO_CONNECTED=$(ps aux| grep "$APPNAME-.*$MONGODB_LOCAL_PORT"| grep -v grep)
@@ -34,4 +29,12 @@ function __develo_startapp_mongodb_helper {
   else
     echo "MongoDB is already connected!"
   fi
+
+  export STARTAPP_MONGODB_DATABASE=$APPNAME
+  export STARTAPP_MONGODB_USER=$_MONGO_USER
+  export STARTAPP_MONGODB_PASS=$_MONGO_PASS
+  export STARTAPP_MONGODB_HOST=127.0.0.1
+  export STARTAPP_MONGODB_PORT=$MONGODB_LOCAL_PORT
+  export STARTAPP_MONGODB_URI=127.0.0.1:$MONGODB_LOCAL_PORT
+
 }
