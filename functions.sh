@@ -1,9 +1,10 @@
 function _develo_root_dir {
 
-  local current_dir="."
+  local current_dir=$(pwd -P 2>/dev/null || command pwd)
 
-  while [ ! -d "$current_dir/$DEVELO_DIR" ]; do
-    current_dir="$current_dir/.."
+  while [ ! -e "$current_dir/.develo" ]; do
+    current_dir=${current_dir%/*}
+    if [ "$current_dir" = "" ]; then break; fi
   done
 
   (builtin cd "$current_dir" && echo "$(pwd -P)")
