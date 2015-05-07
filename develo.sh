@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.20"
+DEVELO_VERSION="0.0.21"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 #have to be in every directory that you want to use develo

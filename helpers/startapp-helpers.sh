@@ -98,4 +98,16 @@ function __develo_startapp_database_helper {
   export STARTAPP_${_HELPER_UPPER_NAME}_PORT=$LOCAL_PORT
   export STARTAPP_${_HELPER_UPPER_NAME}_URI=127.0.0.1:$LOCAL_PORT
 
+  echo ""
+  echo "You can access your database via these ENV VARS."
+  echo "They are already exported and ready to use."
+  echo ""
+  echo "  STARTAPP_${_HELPER_UPPER_NAME}_DATABASE"
+  echo "  STARTAPP_${_HELPER_UPPER_NAME}_USER"
+  echo "  STARTAPP_${_HELPER_UPPER_NAME}_PASS"
+  echo "  STARTAPP_${_HELPER_UPPER_NAME}_HOST"
+  echo "  STARTAPP_${_HELPER_UPPER_NAME}_PORT"
+  echo "  STARTAPP_${_HELPER_UPPER_NAME}_URI"
+  echo ""
+
 }
