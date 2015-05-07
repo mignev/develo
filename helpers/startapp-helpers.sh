@@ -78,7 +78,7 @@ function __develo_startapp_database_helper {
   if [ -z "$IS_CONNECTED" ]; then
     echo "Connecting to $_HELPER_NAME on StartApp"
 
-    local SSH_HOST=$(app show $APPNAME -n $NAMESPACE --gears ssh)
+    local SSH_HOST=$(app show $APPNAME -n $NAMESPACE --gears ssh | grep "$APPNAME-$NAMESPACE")
 
     ssh $SSH_HOST -f -N -L $LOCAL_PORT:$_REMOTE_HOST:$_REMOTE_PORT
     local IS_CONNECTED=$(ps aux| grep "$APPNAME-.*$LOCAL_PORT"| grep -v grep)
