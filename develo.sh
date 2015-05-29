@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.21"
+DEVELO_VERSION="0.0.22"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
-#have to be in every directory that you want to use develo
 DEVELO_DIR=".develo"
+DEVELO_ENV_FILE=".develoenv"
 
 source "${BASH_SOURCE%/*}/functions.sh"
 source "${BASH_SOURCE%/*}/helpers.sh"
@@ -71,6 +71,7 @@ function _develo_help {
     echo
     echo "  init          Initialize new develo environemnt"
     echo "  activate      Activate develo environemnt"
+    echo "  readme        Shows some instructions for the current project"
     echo "  selfupdate    Updates itself"
     echo "  version       Shows installed version"
     echo "  help          Shows you this help"
@@ -81,6 +82,11 @@ function _develo_run {
   local cmd=$1;
   local args=${@:2};
   local file="$(_develo_root_dir)/$DEVELO_DIR/$cmd"
+  local develoenv_file="$(_develo_root_dir)/$DEVELO_ENV_FILE"
+
+  ## Load project specific environment variables
+  ## from .develoenv file
+  __develo_load_env_file_helper $develoenv_file
 
   if [ -f $file ]; then
     # Auto loading banners before out of every command
