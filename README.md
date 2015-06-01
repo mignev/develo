@@ -92,7 +92,7 @@ That's all!
     $ cd ~
     $ git clone https://github.com/mignev/develo.git
     $ mv develo ~/.develo_project
-    $ echo '\nsource ~/.develo_project/develo.sh' >> ~/.bashrc
+    $ echo -e '\nsource ~/.develo_project/develo.sh' >> ~/.bashrc
 
 
 # Uninstallation
