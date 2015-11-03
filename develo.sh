@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.22"
+DEVELO_VERSION="0.0.23"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
