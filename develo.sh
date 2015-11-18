@@ -6,8 +6,10 @@ DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
 DEVELO_ENV_FILE=".develoenv"
 
+source "${BASH_SOURCE%/*}/completion.sh"
 source "${BASH_SOURCE%/*}/functions.sh"
 source "${BASH_SOURCE%/*}/helpers.sh"
+
 
 # Colorful banners :)
 # You will see them when you init new env
