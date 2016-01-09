@@ -38,7 +38,7 @@ function _develo_action_not_exist_banner {
   _develo_sad_color_line;
   echo
   echo
-  echo -e "\x1B[31m   Sorry ... \x1B[0m\x1B[1m$cmd\x1B[0m\x1B[31m isn't exist in .develo/ \x1B[0m";
+  echo -e "\x1B[31m   Sorry ... \x1B[0m\x1B[1m$cmd\x1B[0m\x1B[31m doesn't exist in .develo/ \x1B[0m";
   echo -en "\x1B[1m      If you want ... create it by self!\x1B[0m";
   echo
   echo

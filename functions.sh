@@ -1,13 +1,13 @@
 function _develo_root_dir {
 
-  local current_dir=$(pwd -P 2>/dev/null || command pwd)
+  local current_dir=$(pwd -P |sed 's/ /\\ /g' 2>/dev/null || command pwd);
 
   while [ ! -e "$current_dir/.develo" ]; do
     current_dir=${current_dir%/*}
     if [ "$current_dir" = "" ]; then break; fi
   done
 
-  (builtin cd "$current_dir" && echo "$(pwd -P)")
+  (builtin cd "$current_dir" && echo "`pwd -P`")
 }
 
 is_function() { [[ "$(declare -Ff "$1")" ]]; }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.24"
+DEVELO_VERSION="0.0.25"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
@@ -88,14 +88,14 @@ function _develo_run {
 
   ## Load project specific environment variables
   ## from .develoenv file
-  __develo_load_env_file_helper $develoenv_file
+  __develo_load_env_file_helper "$develoenv_file"
 
-  if [ -f $file ]; then
+  if [ -f "$file" ]; then
     # Auto loading banners before out of every command
     # disabled for now
     # local banner="_develo_actions_${cmd}_banner";
     # ($banner)
-    source $file;
+    source "$file";
     return 0;
   else
     _develo_action_not_exist_banner $cmd;
@@ -104,15 +104,12 @@ function _develo_run {
 }
 
 function _develo_init {
-
   # Create .develo dir if doesn't exists
   if [ ! -d "$DEVELO_DIR" ]; then
-
-    cp -R $DEVELO_CONF_DIR/actions $(pwd)/$DEVELO_DIR;
-    chmod +x $(pwd)/$DEVELO_DIR/*;
+    cp -R $DEVELO_CONF_DIR/actions "`pwd`/$DEVELO_DIR";
+    chmod +x $DEVELO_DIR/*;
 
     _develo_initalized_banner;
-    # echo "Initialized fresh Develo in $(pwd)/$DEVELO_DIR/";
     return 0;
   else
     echo "Develo is already initialized in $(pwd)/$DEVELO_DIR/";
