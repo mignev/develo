@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.25"
+DEVELO_VERSION="0.0.26"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
@@ -85,9 +85,11 @@ function _develo_run {
   local args=${@:2};
   local file="$(_develo_root_dir)/$DEVELO_DIR/$cmd"
   local develoenv_file="$(_develo_root_dir)/$DEVELO_ENV_FILE"
+  local global_develoenv_file="$HOME/$DEVELO_ENV_FILE"
 
   ## Load project specific environment variables
   ## from .develoenv file
+  __develo_load_env_file_helper "$global_develoenv_file"
   __develo_load_env_file_helper "$develoenv_file"
 
   if [ -f "$file" ]; then
