@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.27"
+DEVELO_VERSION="0.0.28"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
@@ -69,18 +69,20 @@ function _develo_help {
   echo "usage: develo <command>"
   echo
 
+  echo -e "\x1B[1mSome things that you have to know:\x1B[0m"
+  echo
+
   if [ -d "$DEVELO_DIR" ]; then
-    echo -e "\x1B[1mSome things that you have to know:\x1B[0m"
-    echo
     echo "  Your scripts are here: $(pwd)/$DEVELO_DIR/"
     echo
-    echo "  init          Initialize new develo environemnt"
-    echo "  activate      Activate develo environemnt"
-    echo "  readme        Shows some instructions for the current project"
-    echo "  selfupdate    Updates itself"
-    echo "  version       Shows installed version"
-    echo "  help          Shows you this help"
   fi
+
+  echo "  init          Initialize new develo environemnt"
+  echo "  activate      Activate develo environemnt"
+  echo "  readme        Shows some instructions for the current project"
+  echo "  selfupdate    Updates itself"
+  echo "  version       Shows installed version"
+  echo "  help          Shows you this help"
 }
 
 function _develo_run {
