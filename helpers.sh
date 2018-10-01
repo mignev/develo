@@ -1,5 +1,5 @@
 # Loading develo build in helpers
-for helper in ${BASH_SOURCE%/*}/helpers/*
+for helper in ${DEVELO_CONF_DIR}/helpers/*
 do
     source $helper
 done

@@ -1,20 +1,23 @@
 #!/bin/bash
 
-DEVELO_VERSION="0.0.26"
+DEVELO_VERSION="0.0.27"
 DEVELO_CONF_DIR=${HOME}/.develo_project
 DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
 DEVELO_ENV_FILE=".develoenv"
 
-source "${BASH_SOURCE%/*}/completion.sh"
-source "${BASH_SOURCE%/*}/functions.sh"
-source "${BASH_SOURCE%/*}/helpers.sh"
+if [ -n "$BASH_VERSION" ]; then
+  source "${DEVELO_CONF_DIR}/completion.sh"
+fi
+
+source "${DEVELO_CONF_DIR}/functions.sh"
+source "${DEVELO_CONF_DIR}/helpers.sh"
 
 
 # Colorful banners :)
 # You will see them when you init new env
 # or when activate env and so on :)
-source "${BASH_SOURCE%/*}/banners.sh"
+source "${DEVELO_CONF_DIR}/banners.sh"
 
 function develo {
   local cmd=$1;
@@ -146,6 +149,7 @@ function _develo_activate {
     else
       PS1="\n(Develo#$project_name)$PS1";
     fi
+
   fi
 
   # This will show up when develo
