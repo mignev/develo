@@ -6,10 +6,7 @@ DEVELO_PRIVATE_HELPERS_DIR=${HOME}/.develo_helpers
 DEVELO_DIR=".develo"
 DEVELO_ENV_FILE=".develoenv"
 
-if [ -n "$BASH_VERSION" ]; then
-  source "${DEVELO_CONF_DIR}/completion.sh"
-fi
-
+source "${DEVELO_CONF_DIR}/completion.sh"
 source "${DEVELO_CONF_DIR}/functions.sh"
 source "${DEVELO_CONF_DIR}/helpers.sh"
 
